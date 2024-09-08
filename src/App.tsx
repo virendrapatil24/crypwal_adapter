@@ -8,6 +8,7 @@ import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import "@solana/wallet-adapter-react-ui/styles.css";
 import NavBar from "./components/NavBar";
 import AirDrop from "./components/AirDrop";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   const endpoint =
@@ -18,9 +19,10 @@ const App = () => {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
-          <div className="h-screen flex flex-col">
+          <div className="h-screen flex flex-col bg-slate-900">
             <NavBar />
-            <AirDrop />
+            {/* <AirDrop /> */}
+            <Dashboard />
           </div>
         </WalletModalProvider>
       </WalletProvider>

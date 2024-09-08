@@ -1,6 +1,7 @@
 import { useConnection } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
 import { useState } from "react";
+import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 const AirDrop = () => {
   const { connection } = useConnection();
@@ -14,7 +15,7 @@ const AirDrop = () => {
         alert("Please enter a value between 0 to 5");
         return;
       }
-      const lamports = amount * 1e9;
+      const lamports = amount * LAMPORTS_PER_SOL;
       await connection.requestAirdrop(validatedPublicKey, lamports);
 
       alert(`Airdrop successful!`);
