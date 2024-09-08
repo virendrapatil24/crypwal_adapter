@@ -33,6 +33,7 @@ const Dashboard = () => {
     if (!ed25519.verify(signature, encodedMessage, publicKey.toBytes()))
       alert("Message signature invalid!");
 
+    setMessage("");
     alert(`Message signature: ${bs58.encode(signature)}`);
   };
 
